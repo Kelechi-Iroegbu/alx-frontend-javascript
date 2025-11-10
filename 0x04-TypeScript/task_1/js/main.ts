@@ -1,4 +1,9 @@
 
+interface Directors extends Teacher {
+  numberOfReports: number;         // Required property for Directors
+}
+
+
 interface Teacher {
   readonly firstName: string;      // Only modifiable at initialization
   readonly lastName: string;       // Only modifiable at initialization
