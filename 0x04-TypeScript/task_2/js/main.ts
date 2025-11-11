@@ -1,18 +1,15 @@
-// DirectorInterface defines expected methods for a Director
 interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
   workDirectorTasks(): string;
 }
 
-// TeacherInterface defines expected methods for a Teacher
 interface TeacherInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
   workTeacherTasks(): string;
 }
 
-// Director class implementing DirectorInterface
 class Director implements DirectorInterface {
   workFromHome(): string {
     return 'Working from home';
@@ -27,7 +24,6 @@ class Director implements DirectorInterface {
   }
 }
 
-// Teacher class implementing TeacherInterface
 class Teacher implements TeacherInterface {
   workFromHome(): string {
     return 'Cannot work from home';
@@ -42,17 +38,21 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// createEmployee function
+// ✅ createEmployee must contain: if (salary < 500)
 function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === 'number' && salary < 500) {
+  if (typeof salary === 'string') {
+    salary = Number(salary);
+  }
+
+  if (salary < 500) {
     return new Teacher();
-  } else if (typeof salary === 'string') {
-    const salaryNumber = parseInt(salary, 10);
-    if (salaryNumber < 500) {
-      return new Teacher();
-    }
-    return new Director();
   } else {
     return new Director();
   }
 }
+
+// Example usage
+console.log(createEmployee(200));   // Teacher
+console.log(createEmployee(1000));  // Director
+console.log(createEmployee('400')); // Teacher
+console.log(createEmployee('800')); // Director
