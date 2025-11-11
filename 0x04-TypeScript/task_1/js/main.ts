@@ -97,7 +97,7 @@ const printTeacher: printTeacherFunction = (firstName, lastName): string => {
   return `${firstName.charAt(0)}. ${lastName}`;
 };
 
-console.log(printTeacher('John', 'Doe')); // J. Doe
+console.log(printTeacher ('John', 'Doe')); // J. Doe
 
 
 /** --------------------------
