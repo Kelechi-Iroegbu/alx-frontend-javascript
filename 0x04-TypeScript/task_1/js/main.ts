@@ -99,6 +99,28 @@ function printTeacher({ firstName, lastName }: Teacher): string {
   return `${firstName}. ${lastName}`;
 };
 
+// Define the StudentClass class
+class StudentClass {
+  firstName: string;
+  lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+// Example usage
+console.log(printTeacher({ firstName: 'John', lastName: 'Doe' })); // J. Doe
+
 // Example usage
 console.log(printTeacher({ firstName: 'John', lastName: 'Doe' })); // J. Doe
 
