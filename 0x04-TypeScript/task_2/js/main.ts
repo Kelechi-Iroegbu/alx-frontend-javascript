@@ -67,3 +67,20 @@ export function executeWork(employee: Director | Teacher): string {
 // ✅ Example usage
 console.log(executeWork(createEmployee(200)));   // Getting to work
 console.log(executeWork(createEmployee(1000)));  /
+
+
+type Subjects = 'Math' | 'History';
+
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+  // Optional fallback (never reached if type checking is strict)
+  return '';
+}
+
+// ✅ Example usage
+console.log(teachClass('Math'));     // Teaching Math
+console.log(teachClass('History'));  // Teaching Hist
