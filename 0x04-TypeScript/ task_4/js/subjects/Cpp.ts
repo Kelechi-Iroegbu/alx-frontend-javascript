@@ -1,14 +1,14 @@
-// task_4/js/subjects/Cpp.ts
+
 import { Subjects } from '../Teacher';
 import { Subject } from './Subject';
 
 export namespace Subjects {
-  // ✅ Declaration merging: adding new optional attribute to Teacher interface
+  // ✅ Using declaration merging for adding a new optional attribute experienceTeachingC (number) to the Teacher interface:
   export interface Teacher {
     experienceTeachingC?: number;
   }
 
-  export class Cpp extends Subject {
+  export class Cpp extends Subject { // class Cpp extends Subject:
     getRequirements(): string {
       return 'Here is the list of requirements for Cpp';
     }
