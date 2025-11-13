@@ -1,8 +1,5 @@
-// task_3/js/interface.ts
-
-export type RowID:number;
-
-export interface RowElement:{
+export type RowID = number; // type RowID:
+export interface RowElement { // interface RowElement:
   firstName: string;
   lastName: string;
   age?: number;
